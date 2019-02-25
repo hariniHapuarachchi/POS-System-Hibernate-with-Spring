@@ -2,20 +2,23 @@ package lk.ijse.dep.app.business.custom.impl;
 
 import lk.ijse.dep.app.business.Converter;
 import lk.ijse.dep.app.business.custom.ManageCustomersBO;
-import lk.ijse.dep.app.dao.DAOFactory;
 import lk.ijse.dep.app.dao.custom.CustomerDAO;
 import lk.ijse.dep.app.dto.CustomerDTO;
 import lk.ijse.dep.app.util.HibernateUtil;
 import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class ManageCustomersBOImpl implements ManageCustomersBO {
 
     private CustomerDAO customerDAO;
 
-    public ManageCustomersBOImpl() {
-        customerDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.CUSTOMER);
+    @Autowired
+    public ManageCustomersBOImpl(CustomerDAO customerDAO) {
+        this.customerDAO=customerDAO;
     }
 
     public List<CustomerDTO> getCustomers() throws Exception {

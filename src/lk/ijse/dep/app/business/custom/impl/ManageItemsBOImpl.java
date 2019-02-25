@@ -2,21 +2,22 @@ package lk.ijse.dep.app.business.custom.impl;
 
 import lk.ijse.dep.app.business.Converter;
 import lk.ijse.dep.app.business.custom.ManageItemsBO;
-import lk.ijse.dep.app.dao.DAOFactory;
 import lk.ijse.dep.app.dao.custom.ItemDAO;
-import lk.ijse.dep.app.dto.CustomerDTO;
 import lk.ijse.dep.app.dto.ItemDTO;
 import lk.ijse.dep.app.util.HibernateUtil;
 import org.hibernate.Session;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 public class ManageItemsBOImpl implements ManageItemsBO {
 
     private ItemDAO itemDAO;
 
-    public ManageItemsBOImpl() {
-        itemDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOTypes.ITEM);
+    @Autowired
+    public ManageItemsBOImpl(ItemDAO itemDAO) {
+        this.itemDAO = itemDAO;
     }
     @Override
     public List<ItemDTO> getItems() throws Exception {

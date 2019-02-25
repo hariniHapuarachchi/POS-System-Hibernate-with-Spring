@@ -13,8 +13,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jfoenix" level="project" />
-    <orderEntry type="library" name="antlr-2.7.7" level="project" />
+    <orderEntry type="library" exported="" name="mysql-connector-java-8.0.13" level="project" />
+    <orderEntry type="library" exported="" name="hibernate" level="project" />
+    <orderEntry type="library" exported="" name="jfoenix" level="project" />
+    <orderEntry type="library" exported="" name="antlr-2.7.7" level="project" />
     <orderEntry type="library" name="spring-aop-5.1.4.RELEASE-javadoc" level="project" />
   </component>
 </module>
